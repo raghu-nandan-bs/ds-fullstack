@@ -85,12 +85,18 @@ Shorten.vue
 <style>
 </style>
 ```
-update vue.config.js :
-put the following below `module.exports`...
+update vite.config.js :
+put the following below `plugins: [vue()]`...
 ```
-  devServer: {
-    proxy:  'http://localhost:5000',  
-  }
+  server: {
+    proxy: {
+      '/api/v1/shorten': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      },
+    },
+  },
 ```
 
 
