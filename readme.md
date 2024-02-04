@@ -85,6 +85,14 @@ Shorten.vue
 <style>
 </style>
 ```
+update vue.config.js :
+put the following below `module.exports`...
+```
+  devServer: {
+    proxy:  'http://localhost:5000',  
+  }
+```
+
 
 Run the code:
 
